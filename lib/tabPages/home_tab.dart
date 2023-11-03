@@ -252,9 +252,10 @@ class _HomeTabPageState extends State<HomeTabPage>
     return Scaffold(
       body: Stack(
         children: [
+
           GoogleMap(
             mapType: MapType.normal,
-            myLocationButtonEnabled: true,
+            myLocationEnabled: true,
             initialCameraPosition: _kGooglePlex,
             onMapCreated: (GoogleMapController controller)
             {
@@ -302,7 +303,7 @@ class _HomeTabPageState extends State<HomeTabPage>
            });
 
            //display Toast
-           Fluttertoast.showToast(msg: "você está Online Agora");
+           Fluttertoast.showToast(msg: "você está Online");
            }
            else //online
                {
@@ -315,7 +316,7 @@ class _HomeTabPageState extends State<HomeTabPage>
            });
 
            //display Toast
-           Fluttertoast.showToast(msg: "você está Offline agora");
+           Fluttertoast.showToast(msg: "você está Offline");
            }
            },
             style: ElevatedButton.styleFrom(
@@ -412,8 +413,8 @@ class _HomeTabPageState extends State<HomeTabPage>
 
     Future.delayed(const Duration(milliseconds: 2000), ()
     {
-      SystemChannels.platform.invokeMethod("SystemNavigator.pop");
 
+     // SystemChannels.platform.invokeMethod("SystemNavigator.pop");
       SystemNavigator.pop();
     });
   }
